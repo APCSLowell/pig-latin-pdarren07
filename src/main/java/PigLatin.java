@@ -51,19 +51,18 @@ public class PigLatin {
         //precondition: sWord is a valid String of length greater than 0
         //postcondition: returns the pig latin equivalent of sWord
         // more code should go here
-	if(findFirstVowel(sWord) == -1)
+	  if (findFirstVowel(sWord) == -1)
 	  {
 	    return sWord + "ay";
-	  }
-	  else
+	  } else
 	  {
-	    if(findFirstVowel(sWord) == 0)
+	    if (findFirstVowel(sWord) == 0) {
 	      return sWord + "way";
-	    else if(sWord.toLowerCase().startsWith("qu"))
-	      return sWord.substring(2) + sWord.substring(0, 2) + "ay";
-	    else if(findFirstVowel(sWord) != 0)
-	      return sWord.substring(findFirstVowel(sWord)) + sWord.substring(0, findFirstVowel(sWord) ) + "ay";
-	    else 
-	        return "ERROR!";
+	    } else if (sWord.startsWith("qu")) {
+	      return sWord.substring(3) + sWord.substring(0, 2) + "ay";
+	    } else if (findFirstVowel(sWord) != 0) {
+	      return sWord.substring(1) + sWord.substring(0, 1) + "ay";
+	    }
+	    return "ERROR!";
 	  }
 }//end PigLatin class
